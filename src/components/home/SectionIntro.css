@@ -1,0 +1,43 @@
+.section-container {
+  height: 500vh;
+  position: relative;
+}
+
+.sticky-container {
+  background-color: rgb(19, 12, 27);
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.title-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-glow {
+  position: absolute;
+  filter: blur(5px);
+  opacity: 1;
+}
+
+.gradient-text {
+  background-image: linear-gradient(
+    var(--gradient-angle, 90deg),
+    #8a2be2,
+    #ff69b4 
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
