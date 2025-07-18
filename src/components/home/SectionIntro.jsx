@@ -3,7 +3,8 @@ import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motio
 import { Parallax } from 'react-scroll-parallax';
 import './SectionIntro.css';
 import danielImg from '../../assets/videos/images/daniel.png';
-
+import InfoCard from './InfoCard';
+import { FaJava, FaGithub, FaLinkedin, FaGamepad, FaCode } from "react-icons/fa";
 
 function SectionIntro() {
   const targetRef = useRef(null);
@@ -13,9 +14,11 @@ function SectionIntro() {
     offset: ["start end", "end start"]
   });
 
-  const opacity = useTransform(scrollYProgress, [0.2, 0.22], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [3, 0]);
+  const opacity = useTransform(scrollYProgress, [0.4, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0.4, 1], [2.5, 2.5]);
   const angle = useTransform(scrollYProgress, [0, 1], [0, 920]);
+
+  const subsectionOpacity = useTransform(scrollYProgress, [0.45, 0.68], [0, 1]);
 
   const backgroundImage = useMotionTemplate`
     linear-gradient(${angle}deg,
@@ -102,8 +105,6 @@ function SectionIntro() {
                 transition={{ duration: 1.2, ease: 'easeInOut', delay: 0.5 }}
                 className="presentation"
               >
-                I'm a passionate developer with an unshakable love for Java,<br />
-                always eager to turn bold and imaginative ideas into reality ☕︎ <br /><br />
                 Here, you can find info about my projects, and my mods wiki.
               </motion.p>
             </motion.div>
@@ -136,42 +137,63 @@ function SectionIntro() {
 
       {/* Section 2 */}
 
-      <motion.div className='subsection-container'>
+      <motion.div
+        className='subsection-container'>
         <motion.div 
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeInOut' }}
-        
+          style={{ opacity:subsectionOpacity }}
           className='container'>
-          <h1 className='skills-title'>I have skills in development of digital products.</h1>
+          <motion.div className='row-container'>
+                <div style={{textAlign: "justify", maxWidth: '50%', padding: 20, paddingInline: 40}}>
+                  <h1 className='skills-title'>THINGS I ♥ TO DO</h1>
+                  <p style={{fontSize: 20, color: "#141619", fontWeight: 200}}>
+                    I’m a passionate developer with an unshakable love for Java and OOP,
+                    RESTful APIs using SpringBoot, and software architecture.<br /><br /> Over the course of my journey, I’ve built personal and academic
+                    projects that strengthened my technical foundation and ability to deliver robust back-end solutions.
+
+                    Currently, I’m expanding my skill set to work as a fullstack developer, focusing on modern front-end technologies and seamless system integration. 
+                    This progression reflects my commitment to understanding the full development lifecycle and delivering
+                    applications that combine performance, design, and user experience.
+                  </p>
+                </div>
+
+                <div style={{
+                  textAlign: "justify",
+                  padding: 20,
+                  paddingInline: 40,
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(2, 1fr)', 
+                  gap: 20,
+                  alignContent: 'center',
+                  justifyItems: 'center'
+                }}>
+                  <InfoCard
+                    icon={FaCode}
+                    title="Developer"
+                    description="Coding back-end solutions with Java and Spring Boot. I also have
+                    experience with SQL and Kafka, and other minor technologies as Liquibase and Flywheel"
+                  />
+                  <InfoCard
+                    icon={FaGithub}
+                    title="GitHub Projects"
+                    description="Explore my open-source contributions and take
+                    a look at my personal projects."
+                  />
+                  <InfoCard
+                    icon={FaLinkedin}
+                    title="LinkedIn"
+                    description="My LinkedIn, where i post updates, and you can contact me if necessary :D"
+                  />
+                  <InfoCard
+                    icon={FaGamepad}
+                    title="Mod wiki"
+                    description="You can take a look at my Minecraft modding environment. You can also access
+                    the wiki in the 'wiki' subsection."
+                  />
+                </div>
+          </motion.div>
         </motion.div>
       </motion.div>
 
-      {/* Section 2 */}
-
-      <motion.div className='subsection-container'>
-        <motion.div 
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeInOut' }}
-        
-          className='container'>
-          <h1 className='skills-title'>I have skills in development of digital products.</h1>
-        </motion.div>
-      </motion.div>
-
-      {/* Section 2 */}
-
-      <motion.div className='subsection-container'>
-        <motion.div 
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeInOut' }}
-        
-          className='container'>
-          <h1 className='skills-title'>I have skills in development of digital products.</h1>
-        </motion.div>
-      </motion.div>
     </motion.section>
   );
 }

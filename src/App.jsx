@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   const { scrollYProgress } = useScroll();
 
-  const opacity = useTransform(scrollYProgress, [0.13, 0.2], [0, 1]);
+  const opacity = useTransform(scrollYProgress, [0.55, 0.66], [0, 1]);
 
   return (
     <>
@@ -27,7 +27,7 @@ function App() {
         backdropFilter: 'blur(10px)',
         WebkitBackdropFilter: 'blur(10px)',
       }}>
-        <motion.div style={{ color: '#f1f1fc', fontWeight: 'bold', fontSize: '1rem', borderRadius: 2,
+        <motion.div style={{ color: '#f1f1fc', fontWeight: 'bold', fontSize: '1rem', borderRadius: 100,
            backgroundColor: 'rgb(182, 62, 62)', padding: 2, paddingInline: 10, opacity}}>
           DnDats Hub
         </motion.div>

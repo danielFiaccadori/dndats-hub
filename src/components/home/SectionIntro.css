@@ -6,11 +6,20 @@
 
 .subsection-container {
   height: 100vh;
-  background-color: #22252b;
-  padding: 50px;
+  background: linear-gradient(#f1f1fc, 85%, #f1f1fc);
+  display: flex;
   align-items: center;
   justify-content: center; 
   overflow: hidden;
+}
+
+.row-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-inline: 200px;
+  gap: 10%;
+  justify-content: center;
 }
 
 .sticky-container {
@@ -32,8 +41,8 @@
 }
 
 .title {
-  font-weight: 800;
-  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 1000;
+  font-family: "Open Sans", sans-serif;
   margin: 0;     
 }
 
@@ -52,28 +61,28 @@
   color: #f1f1fc;
   font-weight: 300;
   width: 120px;
-  border-radius: 2px;
+  border-radius: 100px;
   padding: 2px;
-  background-color: rgb(182, 62, 62);
+  padding-inline: 4px;
+  background-color: #b63e3e;
   font-size: 10px;
 }
 
 .presentation {
   color: #f1f1fc;
   font-weight: 100;
-  font-family: "Source Code Pro", monospace;
+  font-family: "Nunito", sans-serif;
   font-size: 7.5px;
 }
 
 .title-wrapper {
-  font-weight: 800;
+  font-weight: 1000;
   position: relative;
   display: flex;
-  font-family: "Source Code Pro", monospace;
+  font-family: "Open Sans", sans-serif;
   align-items: flex-start;
   justify-content: flex-start;
-  margin: 0;
-}
+  }
 
 .title-glow {
   position: absolute;
@@ -95,11 +104,15 @@
 /* Section 2 */
 
 .skills-title {
-  color: #f1f1fc;
-  font-weight: 200;
-  font-size: 50px;
+  color: #141619;
+  font-weight: 800;
+  font-family: "Open Sans", sans-serif;
+  font-size: 40px;
 }
 
 .container {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
 }
