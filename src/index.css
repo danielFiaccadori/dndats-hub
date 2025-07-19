@@ -8,7 +8,7 @@ html, body {
   width: 100%;
   overflow-x: hidden; 
   scrollbar-width: none;
-  background-color: #141619;
+  background-color: #fedcc3;
 }
 
 body.hide-scrollbar {

@@ -16,16 +16,15 @@ function App() {
         position: 'fixed',
         top: 0,
         zIndex: 100,
-        backgroundColor: "#141619ff",
         width: '100%',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '25px 50px',
+        padding: '15px 40px',
         boxSizing: 'border-box',
 
-        backdropFilter: 'blur(10px)',
-        WebkitBackdropFilter: 'blur(10px)',
+        /* backdropFilter: 'blur(10px)', 
+        WebkitBackdropFilter: 'blur(10px)', */
       }}>
         <motion.div style={{ color: '#f1f1fc', fontWeight: 'bold', fontSize: '1rem', borderRadius: 100,
            backgroundColor: 'rgb(182, 62, 62)', padding: 2, paddingInline: 10, opacity}}>
